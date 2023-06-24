@@ -1,47 +1,10 @@
-#ifndef TRAINBOARD_H
-#define TRAINBOARD_H
 // Создайте структуру с именем train, содержащую поля: название пункта назначения, номер поезда, время отправления.
 // Ввести данные в массив из пяти элементов типа train, упорядочить элементы по номерам поездов.
 // Добавить возможность вывода информации о поезде,
 // номер которого введен пользователем. Добавить возможность сортировки массив по пункту назначения,
 // причем поезда с одинаковыми пунктами назначения должны быть упорядочены по времени отправления.
 
-#include <iostream>
-#include <vector>
-#include <chrono>
-#include <algorithm>
-
-using namespace std;
-
-struct Train
-{
-    Train(string destinationName, int trainNumber, int departureHour, int departureMinute)
-    {
-        _destinationName = destinationName;
-        _trainNumber = trainNumber;
-        _departureHour = departureHour;
-        _departureMinute = departureMinute;
-    }
-
-    void out();
-    int getTrainNumber();
-    int getDepartureHour();
-    int getDepartureMinute();
-private:
-    string _destinationName;
-    int _trainNumber;
-    int _departureHour;
-    int _departureMinute;
-};
-
-struct Trains
-{
-    Trains(vector <Train> &vec);
-    void out();
-    void sortTrains();
-    void selectedOut();
-private:
-    vector <Train> _trains;
-};
-
-#endif // TRAINBOARD_H
+инициализация поездов
+засунуть в массив
+упорядочить с помощью sort
+вывод поезда, в соответствии с набранным номером. Номер 
