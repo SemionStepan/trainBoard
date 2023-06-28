@@ -44,21 +44,46 @@ void Trains::sortTrains()
 
 void Trains::selectedOut()
 {
-/*    switch () Здесь свитч, который выбирает ввод с клавиатуры, cin
+    std::cout << "Выберите номер поезда" << endl;
+    int selected = 0;
+    std::cin >> selected ;
+    switch (selected) // Здесь свитч, который выбирает ввод с клавиатуры, cin
     {
-        case 1: первый поезд
-            _trains. первыйПоезд.Вывод
-            break;
+        case 1:// первый поезд
+        _trains[0].out();
+        break;
         case 2:
+        _trains[1].out();
         break;
         case 3:
+        _trains[2].out();
         break;
         case 4:
+        _trains[3].out();
         break;
         case 5:
+        _trains[4].out();
         break;
         default:
             std::cout << "Вы выбрали неверный номер" << endl;
-            break;
+        break;
+        }
 }
-*/    }
+
+void Trains::destinationSort()
+{
+        sort(_trains.begin(), _trains.end(),
+             [](Train &a, Train &b)
+             {
+                 if(b.getDestinationName() == a.getDestinationName())
+                 {
+                     if(b.getDepartureMinute() > a.getDepartureMinute())
+                     {
+                         return b.getDepartureMinute() > a.getDepartureMinute();
+                     }
+                     return b.getDepartureHour() > a.getDepartureHour();
+                 }
+                 return b.getDestinationName() > a.getDestinationName();
+             }
+             );
+}

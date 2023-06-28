@@ -18,9 +18,9 @@ struct Train
     Train(string destinationName, int trainNumber, int departureHour, int departureMinute);
 
     void out();
+    inline string getDestinationName() const { return _destinationName; }
     inline int getTrainNumber() const { return _trainNumber; }
     inline int getDepartureHour() const { return _departureHour; }
-
     inline int getDepartureMinute() const { return _departureMinute; }
 
 private:
@@ -37,6 +37,7 @@ struct Trains
     void out();
     void sortTrains();
     void selectedOut();
+    void destinationSort();
 
 private:
     vector <Train> _trains;

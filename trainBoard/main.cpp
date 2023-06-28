@@ -15,5 +15,9 @@ vector <Train> vec
 Trains trains(vec);
 trains.sortTrains();
 trains.out();
+trains.selectedOut();
+cout << "---------------По месту назначения" << endl;
+trains.destinationSort();
+trains.out();
     return 0;
 }
