@@ -1,28 +1,24 @@
 #include "trainBoard.h"
 
+Train::Train(string destinationName, int trainNumber, int departureHour, int departureMinute) :
+
+    _destinationName(destinationName),
+    _trainNumber(trainNumber),
+    _departureHour(departureHour),
+    _departureMinute(departureMinute)
+{}
+
 void Train::out()
 {
     std::cout << "[" << _destinationName << "] {" << _trainNumber << "} " << _departureHour << ':' << _departureMinute << endl;
 }
 
-int Train::getTrainNumber()
-{
-    return _trainNumber;
-}
-
-int Train::getDepartureHour()
-{
-    return _departureHour;
-}
-
-int Train::getDepartureMinute()
-{
-    return _departureMinute;
-}
+Trains::Trains(vector<Train> &vec) : _trains(vec)
+{}
 
 void Trains::out()
 {
-    for(auto train : _trains)
+    for(auto &train : _trains)
     {
         train.out();
     }

@@ -15,18 +15,14 @@ using namespace std;
 
 struct Train
 {
-    Train(string destinationName, int trainNumber, int departureHour, int departureMinute)
-    {
-        _destinationName = destinationName;
-        _trainNumber = trainNumber;
-        _departureHour = departureHour;
-        _departureMinute = departureMinute;
-    }
+    Train(string destinationName, int trainNumber, int departureHour, int departureMinute);
 
     void out();
-    int getTrainNumber();
-    int getDepartureHour();
-    int getDepartureMinute();
+    inline int getTrainNumber() const { return _trainNumber; }
+    inline int getDepartureHour() const { return _departureHour; }
+
+    inline int getDepartureMinute() const { return _departureMinute; }
+
 private:
     string _destinationName;
     int _trainNumber;
@@ -36,10 +32,12 @@ private:
 
 struct Trains
 {
-    Trains(vector <Train> &vec);
+    Trains(vector<Train> &vec);
+
     void out();
     void sortTrains();
     void selectedOut();
+
 private:
     vector <Train> _trains;
 };

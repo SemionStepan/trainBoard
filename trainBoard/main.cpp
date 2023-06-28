@@ -13,7 +13,7 @@ vector <Train> vec
 };
 
 Trains trains(vec);
-Trains sortTrains();
+trains.sortTrains();
 trains.out();
     return 0;
 }
